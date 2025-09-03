@@ -36,7 +36,8 @@ pipeline {
                 }
             }
         
-        }stage('build mysql image') {
+        }
+        stage('build mysql image') {
             steps {
                 script {
                    echo 'building mysql docker image...'
