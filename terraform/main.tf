@@ -45,17 +45,10 @@ resource "aws_default_security_group" "default-sg" {
     vpc_id = aws_vpc.myapp-vpc.id
 
     ingress {
-        from_port = 22
-        to_port = 22
-        protocol = "tcp"
-        cidr_blocks = [var.my_ip, var.jenkins_ip]
-    }
-
-    ingress {
-        from_port = 8080
-        to_port = 8080
-        protocol = "tcp"
+        from_port = "0"
+        to_port = "0"
         cidr_blocks = ["0.0.0.0/0"]
+        protocol = "-1"
     }
 
     egress {
